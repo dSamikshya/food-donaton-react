@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import ViewUser from './ViewUser';
 
 const Sidebar = () => {
   return (
@@ -53,10 +55,15 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="forms/advanced.html" className="nav-link">
+            <Link
+                  to="/viewuser"
+                  className="btn-sm bg-indigo"
+                >
+              <a href="" className="nav-link">
                 <i className="far fa-circle nav-icon text-white" />
                 <p className='text-white'>View Users</p>
               </a>
+              </Link>
             </li>
             
             
