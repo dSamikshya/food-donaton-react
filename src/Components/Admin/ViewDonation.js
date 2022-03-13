@@ -7,23 +7,25 @@ import React, { useEffect, useState } from 'react'
 
 
 
-const ViewUser = () => {
+const ViewDonation = () => {
     const[data,setDate]=useState([])
     useEffect(()=>{
-     axios.get('http://localhost:8080/food_donation/user/viewall')
+     axios.get('http://localhost:8080/food_donation/donation/viewall')
      .then(res=>{
          console.log("from server",res.data)
         setDate(res.data)
     }).catch(err=>console.log(err))
     },[])
-    const users=data.map((data,index)=>{
+    const donations=data.map((data,index)=>{
         return(
             <tr>
             <td>{data.id}</td>
             <td>{data.name}</td>
-            <td>{data.email}</td>
-            <td>{data.phone_number}</td>
-            <td>{data.location}</td>
+            <td>{data.quantity}</td>
+            <td>{data.foodtupe_id}</td>
+            <td>{data.manufacture_date}</td>
+            <td>{data.expiry_date}</td>
+            <td>{data.user_id}</td>
             </tr>
         )
     })
@@ -42,16 +44,18 @@ const ViewUser = () => {
         <thead aligh="center">
             <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
-            <th> PhoneNumber</th>
-            <th>Location</th>
+            <th>Quantity</th>
+            <th> Food Type ID</th>
+            <th> Manufacture Date</th>
+            <th> Expiry Date</th>
+            <th>User ID</th>
             </thead>
             <tbody>
                 {/* {<tr align="center">
                 <td colSpan={9}>No User AVailable</td>
                 {users}
                 </tr> */}
-                {users}</tbody>
+                {donations}</tbody>
                     </div>
     
        
@@ -67,4 +71,4 @@ const ViewUser = () => {
   )
 }
 
-export default ViewUser
+export default ViewDonation

@@ -49,22 +49,20 @@ const Sidebar = () => {
           </a>
           <ul className="nav nav-treeview">
             <li className="nav-item">
-              <a href="forms/general.html" className="nav-link">
+            <Link  className="nav-link" to="/adduser">
                 <i className="far fa-circle nav-icon text-white" />
                 <p className="text-white">Add Users</p>
-              </a>
-            </li>
-            <li className="nav-item">
-            <Link
-                  to="/viewuser"
-                  className="btn-sm bg-indigo"
-                >
-              <a href="" className="nav-link">
-                <i className="far fa-circle nav-icon text-white" />
-                <p className='text-white'>View Users</p>
-              </a>
               </Link>
             </li>
+            <li className="nav-item">
+              <Link  className="nav-link" to="/viewuser">
+                <i className="far fa-circle nav-icon text-white" />
+                <p className="text-white">View Users</p>
+              </Link>
+            </li>
+            
+              
+                
             
             
             <li className="nav-item">
@@ -91,10 +89,10 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="forms/advanced.html" className="nav-link">
+            <Link  className="nav-link" to="/viewdonation">
                 <i className="far fa-circle nav-icon text-white" />
-                <p className='text-white'>View Donations</p>
-              </a>
+                <p className="text-white">View Donations</p>
+              </Link>
             </li>
             </ul>
         </li>
@@ -114,16 +112,44 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="forms/advanced.html" className="nav-link">
+            <Link  className="nav-link" to="/viewrequest">
                 <i className="far fa-circle nav-icon text-white" />
-                <p className='text-white'>View Request</p>
+                <p className="text-white">View Requests</p>
+              </Link>
+            </li>
+            </ul>
+        </li>
+        <li className="nav-item ">
+          <a href="#" className="nav-link">
+            <i className="nav-icon fas fa-edit text-white " />
+            <p  className="text-white">
+           Event
+              <i className="fas fa-angle-left right" />
+            </p>
+          </a>
+          <ul className="nav nav-treeview">
+            <li className="nav-item">
+              <a href="forms/general.html" className="nav-link">
+                <i className="far fa-circle nav-icon text-white" />
+                <p className="text-white">Add Event</p>
               </a>
+            </li>
+            <li className="nav-item">
+            <Link  className="nav-link" to="/viewevent">
+                <i className="far fa-circle nav-icon text-white" />
+                <p className="text-white">View Events</p>
+              </Link>
             </li>
             </ul>
         </li>
         
        
-        
+        <li className="nav-item">
+            <Link  className="nav-link" to="/volunteer">
+                <i className="far fa-circle nav-icon text-white" />
+                <p className="text-white">View Volunteers</p>
+              </Link>
+              </li>
        
  
         

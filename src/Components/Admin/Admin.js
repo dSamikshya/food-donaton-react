@@ -11,29 +11,29 @@ import Footer from './Footer';
 import Body from './Body';
 
 import ViewUser from './ViewUser';
+import ViewDonation from './ViewDonation';
 
 
 
 const admin = () => {
   return (
-      <>
+    <div className="Admin">
       
+     {
+    <>
+    <Header/>
+    <Sidebar/>
+        <Routes>
+        <Route  exact path="/"  element={<admin/>}/>
+          <Route path="/viewuser" element={<ViewUser/>}/>
+          <Route path="/viewdonation" element={<ViewDonation/>}/>
+        </Routes>
+     <Footer/>
     
-      <Header/>
-      <Sidebar/>
-    
-    
-      
-     
-      <ViewUser/>
- 
- 
-<Footer/>
-     
-      
-    
-        </>
-  )
+     </>
+    }
+    </div>
+  );
 }
 
 export default admin

@@ -7,23 +7,22 @@ import React, { useEffect, useState } from 'react'
 
 
 
-const ViewUser = () => {
+const Volunteer = () => {
     const[data,setDate]=useState([])
     useEffect(()=>{
-     axios.get('http://localhost:8080/food_donation/user/viewall')
+     axios.get('http://localhost:8080/food_donation/volunteer/viewall')
      .then(res=>{
          console.log("from server",res.data)
         setDate(res.data)
     }).catch(err=>console.log(err))
     },[])
-    const users=data.map((data,index)=>{
+    const volunteers=data.map((data,index)=>{
         return(
             <tr>
             <td>{data.id}</td>
-            <td>{data.name}</td>
-            <td>{data.email}</td>
-            <td>{data.phone_number}</td>
-            <td>{data.location}</td>
+            <td>{data.user_id}</td>
+            <td> {data.date_created}</td>
+            
             </tr>
         )
     })
@@ -41,17 +40,17 @@ const ViewUser = () => {
       <div  className="table table-hover table-bordered ms-5">
         <thead aligh="center">
             <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th> PhoneNumber</th>
-            <th>Location</th>
+            <th>User ID</th>
+            
+            <th> Date Created</th>
+           
             </thead>
             <tbody>
                 {/* {<tr align="center">
                 <td colSpan={9}>No User AVailable</td>
                 {users}
                 </tr> */}
-                {users}</tbody>
+                {volunteers}</tbody>
                     </div>
     
        
@@ -67,4 +66,4 @@ const ViewUser = () => {
   )
 }
 
-export default ViewUser
+export default Volunteer
